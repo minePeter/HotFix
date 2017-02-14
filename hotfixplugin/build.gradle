@@ -1,9 +1,6 @@
 apply plugin: 'groovy'
 apply plugin: 'maven'
 
-group='com.netease.vopen.gradle.plugin'
-version='1.0.0'
-
 repositories {
     jcenter()
 }
@@ -15,9 +12,13 @@ dependencies {
 }
 
 uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: uri('/repo'))
+    repositories.mavenDeployer {
+        def mavenRepositoryPath = file(getProperty('plugin.hotfix'))
+        repository(url: "file://${mavenRepositoryPath.absolutePath}")
+        pom.project {
+            groupId "com.netease.vopen"
+            artifactId "hotfix"
+            version 1.0
         }
     }
 }
