@@ -1,0 +1,23 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+group='com.netease.vopen.gradle.plugin'
+version='1.0.0'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile gradleApi()
+    compile 'org.javassist:javassist:3.20.0-GA'
+    compile 'com.android.tools.build:gradle:2.2.3'
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('/repo'))
+        }
+    }
+}
