@@ -25,9 +25,9 @@ install {
                 url siteUrl
 
                 // Archive
-                groupId project.group
-                artifactId archivesBaseName
-                version project.version
+                groupId 'com.netease.hotfix.gradle'
+                artifactId 'hotfix'
+                version 1.0
 
                 // License
                 inceptionYear inception
@@ -77,7 +77,7 @@ bintray {
     configurations = ['archives']
     pkg {
         repo = 'maven'
-        name = com.netease.vopen
+        name = 'com.netease.hotfix.gradle'
         desc = mavenDesc
         websiteUrl = siteUrl
         issueTrackerUrl = issueUrl
