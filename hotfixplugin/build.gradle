@@ -1,5 +1,6 @@
 apply plugin: 'groovy'
 apply plugin: 'maven'
+//apply from: '../bintray.gradle'
 
 repositories {
     jcenter()
@@ -16,7 +17,7 @@ uploadArchives {
         def mavenRepositoryPath = file(getProperty('plugin.hotfix'))
         repository(url: "file://${mavenRepositoryPath.absolutePath}")
         pom.project {
-            groupId "com.netease.vopen.gradle"
+            groupId "com.netease.hotfix.gradle"
             artifactId "hotfix"
             version 1.0
         }
