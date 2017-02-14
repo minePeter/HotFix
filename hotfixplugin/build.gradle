@@ -16,7 +16,7 @@ uploadArchives {
         def mavenRepositoryPath = file(getProperty('plugin.hotfix'))
         repository(url: "file://${mavenRepositoryPath.absolutePath}")
         pom.project {
-            groupId "com.netease.vopen"
+            groupId "com.netease.vopen.gradle"
             artifactId "hotfix"
             version 1.0
         }
